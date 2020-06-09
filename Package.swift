@@ -4,15 +4,13 @@
 import PackageDescription
 
 let package = Package(
-    name: "ScopedConformances",
-    products: [
-    ],
-    dependencies: [
-    ],
-    targets: [
-        .target(name: "A"),
-        .target(name: "B", dependencies: ["A"]),
-        .target(name: "C", dependencies: ["A"]),
-        .testTarget(name: "D", dependencies: ["A", "B", "C"]),
-    ]
+  name: "UniqueXs",
+  products: [],
+  dependencies: [],
+  targets: [
+    .target(name: "A"),
+    .target(name: "B", dependencies: ["A"]),
+    .target(name: "C", dependencies: ["A"]),
+    .testTarget(name: "D", dependencies: ["A", "B", "C"]),
+  ]
 )
