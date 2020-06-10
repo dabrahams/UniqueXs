@@ -1,19 +1,20 @@
 import XCTest
 
 import A
-#if FAIL_TESTS
 // Currently, tests passing depends on import order
-import C
+#if SWAP_IMPORT_ORDER
 import B  
+import C
 #else
-import B  
 import C
+import B  
 #endif
 
 final class D: XCTestCase {
   func testD() {
     XCTAssertFalse(
-      B.uniqueXs.containsDuplicates(), "B thinks its Xs are unique")
+      B.uniqueXs.containsDuplicates(),
+      "Whether this fails depends on import order")
     B.uniqueXs.doSomething()
   }
 
